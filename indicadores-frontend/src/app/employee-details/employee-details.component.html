@@ -1,0 +1,29 @@
+<h2>Indicadores do país {{id}}</h2> 
+
+<hr/>
+<div style="text-align: right;">
+  <button (click)="list()" class="btn btn-primary">Voltar a lista de países</button><br>
+</div>
+<div *ngIf="employee">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Indicador ID</th>
+        <th>Indicador Valor</th>
+        <th>Ano</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enn of employee.listaDeIndicadores">
+        <td>{{enn.country.value}}</td>
+        <td>{{enn.indicador.id}}</td>
+        <td>{{enn.indicador.value}}</td>
+        <td>{{enn.date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>

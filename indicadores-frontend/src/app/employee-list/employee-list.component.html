@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Lista de Países</h2>
+  </div>
+  <div class="panel-body">
+    <nav >
+      <label>Buscar</label>
+      <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
+    </nav>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Codigo</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees | async  | filter:filter; let i = index">
+          <td>{{i}}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.code}}</td>
+          <td>
+              <button (click)="employeeDetails(employee.code)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
